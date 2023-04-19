@@ -1,7 +1,9 @@
+import Display from './components/Display';
+
 function App() {
   return (
-    <div className="App">
-      Hello
+    <div className="container">
+      <Display />
     </div>
   );
 }
