@@ -96,6 +96,14 @@ To run tests, run the following command:
 - Netlify
 - Render
 
+### Live Demo Link
+
+- Live Demo Link: [Live Link](https://dselaseacrypto.netlify.app/)
+
+### Project Video Description
+
+- Video Description: [Video Description of Project](https://www.loom.com/share/ef0dce417d91491693950845be517aab)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 👥 Authors <a name="authors"></a>
