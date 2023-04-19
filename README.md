@@ -96,6 +96,12 @@ To run tests, run the following command:
 - Netlify
 - Render
 
+### Future Features
+
+- Crypto Charts
+- Sign Up and Sign In
+- Price ticker
+
 ### Live Demo Link
 
 - Live Demo Link: [Live Link](https://dselaseacrypto.netlify.app/)
