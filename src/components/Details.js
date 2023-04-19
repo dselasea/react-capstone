@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { FaLongArrowAltLeft } from 'react-icons/fa';
 import { filterCrypto } from '../redux/data/dataSlice';
 
 const Details = () => {
@@ -16,12 +17,14 @@ const Details = () => {
   const crypto = cryptoInfo.data.filter((cryptoData) => cryptoData.show === true);
 
   return (
-    <div className="crypto-detail">
-      {
+    <>
+      <FaLongArrowAltLeft className="arrow" />
+      <div className="crypto-detail">
+        {
         crypto.map((cryptoData) => (
           <div key={cryptoData.id}>
             <img src={cryptoData.cryptoImage} alt={cryptoData.cryptoName} />
-            <h4>{cryptoData.cryptoName}</h4>
+            <h2>{cryptoData.cryptoSymbol}</h2>
             <p>
               Price: $
               {cryptoData.cryptoPrice.toFixed(2)}
@@ -45,7 +48,8 @@ const Details = () => {
           </div>
         ))
       }
-    </div>
+      </div>
+    </>
   );
 };
 

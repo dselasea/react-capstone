@@ -22,6 +22,10 @@ const Display = () => {
     setSearch(e.target.value);
   };
 
+  if (data.loading || data.error) {
+    <h1>Loading...</h1>;
+  }
+
   return (
     <div className="content">
       <div className="search">
