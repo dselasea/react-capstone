@@ -8,22 +8,24 @@ const Display = () => {
   const data = useSelector((state) => state.data);
   const [search, setSearch] = useState('');
 
-  console.log(data);
-
   useEffect(() => {
     dispatch(fetchData());
   }, [dispatch]);
-
-  const searchCrypto = data.data.filter((cryptoData) => (
-    cryptoData.cryptoName.toLowerCase().includes(search.toLowerCase())
-  ));
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
   };
 
-  if (data.loading || data.error) {
-    <h1>Loading...</h1>;
+  const searchCrypto = data.data.filter((cryptoData) => (
+    cryptoData.cryptoName.toLowerCase().includes(search.toLowerCase())
+  ));
+
+  if (data.loading) {
+    return (
+      <div className="spinner">
+        <h1>Loading cryptos...</h1>
+      </div>
+    );
   }
 
   return (

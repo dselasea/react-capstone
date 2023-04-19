@@ -26,7 +26,7 @@ img {
 
 .container {
   max-width: 1200px;
-  margin: 3rem auto;
+  margin: 2rem auto;
   padding: 1rem;
 }
 
@@ -34,6 +34,24 @@ img {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
+}
+
+.details-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #6b6b6b;
+  transition: ease 0.3s;
+  padding: 0rem 1rem;
+}
+
+.details-card:last-child {
+  border-bottom: 1px solid transparent;
+}
+
+.details-card:hover {
+  background-color: #2a2a2a;
+  cursor: pointer;
 }
 
 .btn {
@@ -44,6 +62,10 @@ img {
   background: #4422EF;
   color: #fff;
   font-weight: bold;
+}
+
+.crypto-cards .btn {
+  margin: 1rem 0;
 }
 
 .container .crypto-cards, .container .crypto-detail {
@@ -57,13 +79,21 @@ img {
 .container .crypto-detail {
   max-width: 400px;
   margin: auto auto;
+  padding: 1rem 0 0 0;
 }
 
 .search input {
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1.5rem;
+  font-size: 1.3rem;
   margin: 1rem 0;
   border: 0;
   border-radius: 10px;
+}
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .arrow {
@@ -80,7 +110,7 @@ img {
 
 @media only screen and (min-width: 1040px) {
   .container .crypto-info {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 

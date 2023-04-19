@@ -25,9 +25,9 @@ export const fetchData = createAsyncThunk('fetchCryptoData/getCryptoData', async
 });
 
 const initialState = {
-  loading: false,
+  loading: true,
   data: [],
-  error: null,
+  error: false,
 };
 
 export const dataSlice = createSlice({
@@ -51,7 +51,7 @@ export const dataSlice = createSlice({
 
   extraReducers: (builder) => {
     builder.addCase(fetchData.pending, (state) => {
-      state.status = true;
+      state.loading = true;
     });
     builder.addCase(fetchData.fulfilled, (state, action) => {
       state.loading = false;

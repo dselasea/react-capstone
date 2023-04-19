@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink, useParams } from 'react-router-dom';
-import { FaLongArrowAltLeft } from 'react-icons/fa';
 import { filterCrypto } from '../redux/data/dataSlice';
 
 const Details = () => {
@@ -26,27 +25,35 @@ const Details = () => {
         crypto.map((cryptoData) => (
           <div key={cryptoData.id}>
             <img src={cryptoData.cryptoImage} alt={cryptoData.cryptoName} />
+            <h1>
+              Rank:
+              {' '}
+              {cryptoData.cryptoRank}
+            </h1>
             <h2>{cryptoData.cryptoSymbol}</h2>
-            <p>
-              Price: $
+
+            <div className="details-card">
+              <h4>Price:</h4>
+              {' '}
+              $
               {cryptoData.cryptoPrice.toFixed(2)}
-            </p>
-            <p>
-              Website:
+            </div>
+            <div className="details-card">
+              <h4>Website:</h4>
               {cryptoData.cryptoUrl}
-            </p>
-            <p>
-              Price Change (Hour):
+            </div>
+            <div className="details-card">
+              <h4>Price Change (Hour):</h4>
               {cryptoData.cryptoChangeHour}
-            </p>
-            <p>
-              Price Change (Day):
+            </div>
+            <div className="details-card">
+              <h4>Price Change (Day):</h4>
               {cryptoData.cryptoChangeDay}
-            </p>
-            <p>
-              Price Change (Week):
+            </div>
+            <div className="details-card">
+              <h4>Price Change (Week):</h4>
               {cryptoData.cryptoChangeWeek}
-            </p>
+            </div>
           </div>
         ))
       }
