@@ -29,16 +29,16 @@ const Display = () => {
   }
 
   return (
-    <div className="content">
-      <div className="search">
+    <main className="content">
+      <section className="search">
         <input
           type="text"
           value={search}
           placeholder="Search Crypto"
           onChange={handleSearch}
         />
-      </div>
-      <div className="crypto-info">
+      </section>
+      <section className="crypto-info">
         {searchCrypto.length === 0 ? (
           <h1>No Results Found!</h1>
         ) : (
@@ -53,8 +53,8 @@ const Display = () => {
               <NavLink to={`/info/${info.id}`}><button type="button" className="btn">View Details</button></NavLink>
             </div>
           )))}
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };
 

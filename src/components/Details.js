@@ -20,7 +20,7 @@ const Details = () => {
       <NavLink to="/">
         <button type="button" className="btn">Back</button>
       </NavLink>
-      <div className="crypto-detail">
+      <section className="crypto-detail">
         {
         crypto.map((cryptoData) => (
           <div key={cryptoData.id}>
@@ -57,7 +57,7 @@ const Details = () => {
           </div>
         ))
       }
-      </div>
+      </section>
     </>
   );
 };

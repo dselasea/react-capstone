@@ -5,7 +5,7 @@ import Header from './components/Header';
 
 function App() {
   return (
-    <div className="container">
+    <section className="container">
       <BrowserRouter>
         <Header />
         <Routes>
@@ -13,7 +13,7 @@ function App() {
           <Route path="/info/:id" element={<Details />} />
         </Routes>
       </BrowserRouter>
-    </div>
+    </section>
   );
 }
 
