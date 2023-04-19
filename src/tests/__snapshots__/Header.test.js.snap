@@ -8,7 +8,9 @@ exports[`Home renders correctly 1`] = `
     }
   }
 >
-  <h1>
+  <h1
+    className="header-title"
+  >
     Crypto Currency Application
   </h1>
 </header>
