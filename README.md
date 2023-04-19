@@ -130,7 +130,7 @@ If you like this project kindly give it a star
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Microverse for creating this project.
+I will like to thank [Nelson Sakwa](https://www.behance.net/sakwadesignstudio) the author of the original design.
 
 ## 📝 License <a name="license"></a>
 
