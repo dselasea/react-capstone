@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import { FaLongArrowAltLeft } from 'react-icons/fa';
 import { filterCrypto } from '../redux/data/dataSlice';
 
@@ -18,7 +18,9 @@ const Details = () => {
 
   return (
     <>
-      <FaLongArrowAltLeft className="arrow" />
+      <NavLink to="/">
+        <button type="button" className="btn">Back</button>
+      </NavLink>
       <div className="crypto-detail">
         {
         crypto.map((cryptoData) => (

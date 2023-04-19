@@ -36,12 +36,22 @@ img {
   gap: 1rem;
 }
 
+.btn {
+  padding: 0.5rem 1rem;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #4422EF;
+  color: #fff;
+  font-weight: bold;
+}
+
 .container .crypto-cards, .container .crypto-detail {
   padding: 1rem;
   text-align: center;
   background: #323234;
-  border: 1px solid #ccc;
-  border-radius: 30px;
+  box-shadow: -16px -23px 38px -23px rgba(0,0,0,0.5);
+  border-radius: 10px;
 }
 
 .container .crypto-detail {
@@ -59,11 +69,18 @@ img {
 .arrow {
   font-size: 1.5rem; 
   margin: 1rem; 
+  fill: #BCFE2F;
 }
 
 @media only screen and (min-width: 768px) {
   .container .crypto-info {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1040px) {
+  .container .crypto-info {
+    grid-template-columns: repeat(5, 1fr);
   }
 }
 

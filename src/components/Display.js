@@ -48,7 +48,7 @@ const Display = () => {
                 Price: $
                 {info.cryptoPrice.toFixed(2)}
               </p>
-              <NavLink to={`/info/${info.id}`}><button type="button">View Details</button></NavLink>
+              <NavLink to={`/info/${info.id}`}><button type="button" className="btn">View Details</button></NavLink>
             </div>
           )))}
       </div>
