@@ -1,46 +1,47 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchCovidData } from '../redux/data/dataSlice';
-import Search from './Search';
+import { fetchData } from '../redux/data/dataSlice';
 
 const Display = () => {
   const dispatch = useDispatch();
-  const data = useSelector((state) => state.data.data);
+  const data = useSelector((state) => state.data);
+  const [search, setSearch] = useState('');
 
   console.log(data);
 
   useEffect(() => {
-    dispatch(fetchCovidData());
+    dispatch(fetchData());
   }, [dispatch]);
 
+  const searchCrypto = data.data.filter((cryptoData) => (
+    cryptoData.cryptoName.toLowerCase().includes(search.toLowerCase())
+  ));
+
+  const handleSearch = (e) => {
+    setSearch(e.target.value);
+  };
+
   return (
-    <>
-      <Search />
-      <div className="content">
-        {
-        data.map((covidData) => (
-          <div key={covidData.country} className="country">
-            <div style={{
-              backgroundImage: `url(${covidData.countryInfo.flag})`, backgroundRepeat: 'no-repeat', padding: '3rem', height: '400px', backgroundSize: 'contain',
-            }}
-            />
-            <div className="content-details">
-              <h1>{covidData.country}</h1>
-              <p>
-                <span>Population: </span>
-                {covidData.population}
-              </p>
-              <p>
-                <span>Deaths: </span>
-                {covidData.deaths}
-              </p>
-              <button type="button" className="btn">View Details</button>
-            </div>
-          </div>
-        ))
-      }
+    <div className="content">
+      <div className="search">
+        <input
+          type="text"
+          value={search}
+          placeholder="Search Crypto"
+          onChange={handleSearch}
+        />
       </div>
-    </>
+      <div>
+        {searchCrypto.length === 0 ? (
+          <h1>No Results Found!</h1>
+        ) : (
+          searchCrypto.map((info) => (
+            <div key={info.id}>
+              <h1>{info.cryptoName}</h1>
+            </div>
+          )))}
+      </div>
+    </div>
   );
 };
 

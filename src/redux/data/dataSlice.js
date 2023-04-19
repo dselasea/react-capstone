@@ -2,18 +2,19 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 const url = 'https://api.coinstats.app/public/v1/coins/';
 
-export const fetchData = createAsyncThunk('fetchCryptoData/getCovidData', async () => {
+export const fetchData = createAsyncThunk('fetchCryptoData/getCryptoData', async () => {
   const response = await fetch(url);
   const data = await response.json();
-  const cryptoData =  data.coins.map((coin) => (
+  const cryptoData = data.coins.map((coin) => (
     {
       id: coin.id,
       cryptoImage: coin.icon,
       cryptoName: coin.name,
       cryptoPrice: coin.price,
-      url: coin.websiteUrl
+      url: coin.websiteUrl,
+      show: false,
     }
-  ))
+  ));
   return cryptoData;
 });
 
@@ -28,7 +29,7 @@ export const dataSlice = createSlice({
   initialState,
   reducers: {
     filterCrypto: (state, action) => {
-      const id = action.payload
+      const id = action.payload;
       const cryptoData = state;
       cryptoData.crypto = state.crypto.map((coin) => {
         const coins = coin;
@@ -39,18 +40,18 @@ export const dataSlice = createSlice({
         }
         return coin;
       });
-    }
+    },
   },
 
   extraReducers: (builder) => {
-    builder.addCase(fetchCovidData.pending, (state) => {
+    builder.addCase(fetchData.pending, (state) => {
       state.status = true;
     });
-    builder.addCase(fetchCovidData.fulfilled, (state, action) => {
+    builder.addCase(fetchData.fulfilled, (state, action) => {
       state.loading = false;
       state.data = action.payload;
     });
-    builder.addCase(fetchCovidData.rejected, (state, action) => {
+    builder.addCase(fetchData.rejected, (state, action) => {
       state.loading = false;
       state.data = [];
       state.error = action.error.message;
@@ -59,4 +60,4 @@ export const dataSlice = createSlice({
 });
 
 export default dataSlice.reducer;
-export const {filterCrypto} = dataSlice.actions;
+export const { filterCrypto } = dataSlice.actions;
