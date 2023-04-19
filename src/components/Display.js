@@ -23,7 +23,7 @@ const Display = () => {
   if (data.loading) {
     return (
       <div className="spinner">
-        <h1>Loading cryptos...</h1>
+        <div className="loader" />
       </div>
     );
   }
