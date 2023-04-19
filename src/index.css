@@ -14,8 +14,15 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #0F0F0F;
+  color: #fff;
 }
 
+img {
+  width: 100%;
+  max-width: 90px;
+  height: auto;
+}
 
 .container {
   max-width: 1200px;
@@ -23,28 +30,24 @@ body {
   padding: 1rem;
 }
 
-img {
-  max-width: 100%;
-  height: 108px;
-}
-
-.content {
+.container .crypto-info {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 }
 
-.content .country {
-  border: 2px solid black;
+.container .crypto-cards, .container .crypto-detail {
+  padding: 1rem;
+  text-align: center;
+  background: #323234;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+}
+
+.search input {
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  border: 0;
   border-radius: 10px;
 }
 
-.content .content-details {
-  padding: 0.5rem;
-}
-
-.btn {
-  padding: 1rem 2rem;
-  border-radius: 5px;
-  cursor: pointer;
-}

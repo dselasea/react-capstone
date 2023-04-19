@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { fetchData } from '../redux/data/dataSlice';
 
 const Display = () => {
@@ -31,13 +32,19 @@ const Display = () => {
           onChange={handleSearch}
         />
       </div>
-      <div>
+      <div className="crypto-info">
         {searchCrypto.length === 0 ? (
           <h1>No Results Found!</h1>
         ) : (
           searchCrypto.map((info) => (
-            <div key={info.id}>
-              <h1>{info.cryptoName}</h1>
+            <div className="crypto-cards" key={info.id}>
+              <h4>{info.cryptoName}</h4>
+              <img src={info.cryptoImage} alt={info.cryptoImage} />
+              <p>
+                Price: $
+                {info.cryptoPrice.toFixed(2)}
+              </p>
+              <NavLink to={`/info/${info.id}`}><button type="button">View Details</button></NavLink>
             </div>
           )))}
       </div>

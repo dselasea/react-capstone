@@ -9,9 +9,15 @@ export const fetchData = createAsyncThunk('fetchCryptoData/getCryptoData', async
     {
       id: coin.id,
       cryptoImage: coin.icon,
+      cryptoSymbol: coin.symbol,
       cryptoName: coin.name,
       cryptoPrice: coin.price,
-      url: coin.websiteUrl,
+      cryptoRank: coin.rank,
+      cryptoSupply: coin.totalSupply,
+      cryptoChangeHour: coin.priceChange1h,
+      cryptoChangeDay: coin.priceChange1d,
+      cryptoChangeWeek: coin.priceChange1w,
+      cryptoUrl: coin.websiteUrl,
       show: false,
     }
   ));
@@ -31,7 +37,7 @@ export const dataSlice = createSlice({
     filterCrypto: (state, action) => {
       const id = action.payload;
       const cryptoData = state;
-      cryptoData.crypto = state.crypto.map((coin) => {
+      cryptoData.crypto = state.data.map((coin) => {
         const coins = coin;
         if (coin.id === id) {
           coins.show = true;
