@@ -22,9 +22,9 @@
 - [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license)
 
-# 📖 Space Travelers' Hub <a name="about-project"></a>
+# 📖 Crypto Currency Application <a name="about-project"></a>
 
-**React Capstone Project** is a Single Page Aplication Project built with React and Redux that provides commercial different kinds of data.
+**Crypto Currency Application** is a Single Page Aplication Project built with React and Redux that provides crypto currency data. It has different kinds of data from prices, crypto currency rankings etc.
 
 ## 🛠 Built With <a name="built-with"></a>
 
