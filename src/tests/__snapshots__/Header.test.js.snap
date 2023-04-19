@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home renders correctly 1`] = `
+<header
+  style={
+    Object {
+      "color": "#fff",
+    }
+  }
+>
+  <h1>
+    Crypto Currency Application
+  </h1>
+</header>
+`;

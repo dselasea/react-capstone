@@ -62,6 +62,11 @@ img {
   background: #4422ef;
   color: #fff;
   font-weight: bold;
+  transition: ease 0.3s;
+}
+
+.btn:hover {
+  background: rgba(68, 34, 239, 0.5);
 }
 
 .crypto-cards .btn {
@@ -98,7 +103,7 @@ img {
 }
 
 .spinner .loader {
-  border: 10px solid #f3f3f3;
+  border: 10px solid #0f0f0f;
   border-radius: 50%;
   border-top: 10px solid #4422ef;
   border-bottom: 10px solid #4422ef;
