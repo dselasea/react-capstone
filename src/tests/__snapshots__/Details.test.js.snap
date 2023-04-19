@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home renders correctly 1`] = `
+Array [
+  <a
+    aria-current="page"
+    className="active"
+    href="/"
+    onClick={[Function]}
+  >
+    <button
+      className="btn"
+      type="button"
+    >
+      Back
+    </button>
+  </a>,
+  <section
+    className="crypto-detail"
+  />,
+]
+`;
